@@ -26,7 +26,7 @@
   ?>
   <h1>Ajouter un nouvel article</h1>
 
-  <form class="form" id="form" method="post" enctype="multipart/form-data" action="admin">
+  <form class="form" id="form" method="post" enctype="multipart/form-data" action="admin.php">
     <div class="form-control">
       <label for="title">Title:</label>
       <input type="text" name="title" id="title">
@@ -56,18 +56,18 @@
 <p>Il y a <?= count($allArticles); ?> articles</p>
 
 <div class="article-grid">
-  <?php  foreach($allArticles as $article ) :?>
+  <?php foreach ($allArticles as $article) : ?>
     <div class="article">
-       <h2><?=$article['title'] ?></h2>
-       <p><?=$article['introduction'] ?></p>
-       <small> Ecrit le<?=$article['created_at'] ?> </small> <br />
-       <a href="article?id=<?= urlencode($article['id']); ?>">voir</a>
-        <a href="edit-article?id=<?= urlencode($article['id']); ?>">Éditer</a>
-        <a href="delete-article?id=<?= urlencode($article['id']); ?>"
-               onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?!')">Supprimer</a>
-        </div>
-     <?php  endforeach?>
+      <h2><?= $article['title'] ?></h2>
+      <p><?= $article['introduction'] ?></p>
+      <small> Ecrit le<?= $article['created_at'] ?> </small> <br />
+      <a href="article.php?id=<?= urlencode($article['id']); ?>">voir</a>
+      <a href="edit-article.php?id=<?= urlencode($article['id']); ?>">Éditer</a>
+      <a href="delete-article.php?id=<?= urlencode($article['id']); ?>"
+        onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?!')">Supprimer</a>
     </div>
-  </div>
+  <?php endforeach ?>
+</div>
+</div>
 
 </div>

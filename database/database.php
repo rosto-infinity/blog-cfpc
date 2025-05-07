@@ -3,7 +3,7 @@
 $servername = "127.0.0.1";
 $username = "valet"; // Utilisez 'root' si c'est votre utilisateur MySQL
 $password = "valet"; // Utilisez le mot de passe correct
-$database = "blogphp-2025";
+$database = "blog-cfpc";
 
 try {
     // Établir la connexion à la base de données
