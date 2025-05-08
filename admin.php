@@ -124,7 +124,7 @@ ob_start();
 // Inclure le layout de la page d'accueil
 require_once 'layouts/adminfghghhjfhf/admin_dashboardgfdgdqsfqqssqs_html.php';
 
-// Récupération du contenu du tampon de la page d'accueil
+// -Récupération du contenu du tampon de la page d'accueil
 $pageContent = ob_get_clean();
 
 // Inclure le layout de la page de sortie

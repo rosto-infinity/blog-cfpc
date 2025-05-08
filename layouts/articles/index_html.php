@@ -13,5 +13,6 @@
         <a href="article.php?id=<?= $article['id'] ?>" class="btn btn-primary">Voir plus</a>
       </article>
     <?php endforeach; ?>
+    
   </div>
 </section>
