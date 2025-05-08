@@ -1,0 +1,414 @@
+.rtr{
+  // Mode Zen : plein écran désactivé
+  "zenMode.fullScreen": false,
+  // Mode Zen : onglets masqués
+  "zenMode.showTabs": "none",
+  // Mode Zen : mise en page non centrée
+  "zenMode.centerLayout": false,
+
+  // Police du terminal intégré
+  "terminal.integrated.fontFamily": "Jetbrains Mono",
+  // Détection automatique du thème clair/sombre selon le système
+  "window.autoDetectColorScheme": true,
+
+  // Taille de la police pour CodeLens (infos inline)
+  "editor.codeLensFontSize": 13,
+  // Taille de la police dans la console de débogage
+  "debug.console.fontSize": 10,
+
+  // UI minimaliste : marges de glyphes désactivées
+  "editor.glyphMargin": false,
+  // UI minimaliste : pliage de code activé
+  "editor.folding": true,
+  // Numéros de ligne masqués
+  "editor.lineNumbers": "off",
+  // Onglets épinglés affichés en taille compacte
+  "workbench.editor.pinnedTabSizing": "compact",
+  // Onglets non épinglés affichés en taille réduite
+  "workbench.editor.tabSizing": "shrink",
+  // Pas de page d’accueil après installation
+  "workbench.welcomePage.walkthroughs.openOnInstall": false,
+
+  // Thème principal sombre
+  "workbench.colorTheme": "Xiaolu Abei Dark Soft",
+  // Thème clair préféré (pour basculement automatique)
+  "workbench.preferredLightColorTheme": "Palenight Operator",
+  // Thème sombre préféré (pour basculement automatique)
+  "workbench.preferredDarkColorTheme": "Palenight Operator",
+  // Jeu d’icônes dans l’explorateur
+  "workbench.iconTheme": "city-lights-icons-vsc",
+  // Toujours ajouter un saut de ligne final aux fichiers
+  "files.insertFinalNewline": true,
+  // Met en surbrillance l’onglet modifié
+  "workbench.editor.highlightModifiedTabs": true,
+
+  // Recherche sensible à la casse si une majuscule est utilisée
+  "search.smartCase": true,
+
+  // Animation fluide du curseur
+  "editor.cursorSmoothCaretAnimation": "on",
+  // Propositions de tabulation dans l’éditeur
+  "editor.tabCompletion": "on",
+  // Nombre d’éditeurs ouverts affichés en liste
+  "explorer.openEditors.visible": 1,
+
+  // Désactive la corbeille native pour suppression de fichiers
+  "files.enableTrash": false,
+
+  // Barre d’activité masquée
+  "workbench.activityBar.location": "hidden",
+  // Aucun éditeur ouvert au démarrage
+  "workbench.startupEditor": "none",
+  // Position de la barre latérale à droite
+  "workbench.sideBar.location": "right",
+  // Masquer les onglets dans l’éditeur
+  "workbench.editor.showTabs": "none",
+  // Désactive l’aperçu automatique des fichiers
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  // Désactive le sticky scroll dans les arbres
+  "workbench.tree.enableStickyScroll": false,
+  // Indentation de 16px dans les arbres
+  "workbench.tree.indent": 16,
+  // Pas de guides d’indentation visuels
+  "workbench.tree.renderIndentGuides": "none",
+  // Désactive les astuces intégrées
+  "workbench.tips.enabled": false,
+
+  // Taille de la police de l’éditeur
+  "editor.fontSize": 17,
+  // Police de l’éditeur
+  "editor.fontFamily": "Jetbrains Mono",
+  // Active les ligatures de police
+  "editor.fontLigatures": true,
+  // Épaisseur de police
+  "editor.fontWeight": "400",
+  // Hauteur de ligne importante pour confort visuel
+  "editor.lineHeight": 60,
+  // Taille de tabulation (espaces)
+  "editor.tabSize": 4,
+  // Pliage masqué (jamais)
+  "editor.showFoldingControls": "never",
+  // Curseur à clignotement fluide
+  "editor.cursorBlinking": "smooth",
+  // Curseur sous forme de ligne
+  "editor.cursorStyle": "line",
+  // Largeur du curseur en pixels
+  "editor.cursorWidth": 4,
+  // Pas de guides d’indentation
+  "editor.guides.indentation": false,
+  // Affiche uniquement les espaces de fin
+  "editor.renderWhitespace": "trailing",
+  // Masque la minimap
+  "editor.minimap.enabled": false,
+  // Pas de surlignage de la ligne courante
+  "editor.renderLineHighlight": "none",
+  // Masque les caractères de contrôle
+  "editor.renderControlCharacters": false,
+  // Cache le curseur dans la vue d’ensemble
+  "editor.hideCursorInOverviewRuler": true,
+  // Désactive la coloration inline des décorateurs de couleur
+  "editor.colorDecorators": false,
+  // Désactive CodeLens (annotations de code)
+  "editor.codeLens": false,
+  // Désactive l’ampoule de suggestions de correction
+  "editor.lightbulb.enabled": "off",
+  // Désactive le surlignage des sélections
+  "editor.selectionHighlight": false,
+  // Désactive le surlignage des occurrences
+  "editor.occurrencesHighlight": "off",
+  // Pas de bordure dans la barre d’aperçu
+  "editor.overviewRulerBorder": false,
+  // Taille de la police pour les suggestions
+  "editor.suggestFontSize": 16,
+  // Hauteur de ligne pour les suggestions
+  "editor.suggestLineHeight": 30,
+  // Définition des séparateurs de mots pour double-clic
+  "editor.wordSeparators": "`~!@#%^&*()-=+[{]}\\|;:'\",.<>/?",
+  // Propositions de snippets prioritaires
+  "editor.snippetSuggestions": "top",
+  // Supprime les suggestions inline conflictantes
+  "editor.inlineSuggest.suppressSuggestions": true,
+  // Désactive le sticky scroll pour l’éditeur
+  "editor.stickyScroll.enabled": false,
+  // Ne pas détecter automatiquement l’indentation
+  "editor.detectIndentation": false,
+  // Wrap selon la colonne configurée
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 175,
+  // Délai avant affichage de l’aide-hover (ms)
+  "editor.hover.delay": 750,
+  "editor.hover.enabled": true,
+  // Ne jamais mettre en surbrillance les accolades appariées
+  "editor.matchBrackets": "never",
+  // Edition liée des balises/appels
+  "editor.linkedEditing": true,
+  // Ne pas formater automatiquement au collage
+  "editor.formatOnPaste": false,
+  // Ne pas formater automatiquement à la sauvegarde
+  "editor.formatOnSave": false,
+  // Actions à exécuter à la sauvegarde (ici ESLint)
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  // Formateur par défaut pour Laravel
+  "editor.defaultFormatter": "laravel.vscode-laravel",
+  // Personnalisation des styles de token
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "keyword",
+          "variable.language",
+          "entity.other.attribute-name.html",
+          "entity.other.attribute-name",
+          "keyword.control",
+          "storage.type",
+          "comment.block",
+          "comment.line"
+        ],
+        "settings": {
+          "fontStyle": "" // désactive italique pour ces scopes
+        }
+      }
+    ]
+  },
+
+  // Regex expérimental pour TailwindCSS class suggestions
+  "tailwindCSS.experimental.classRegex": ["[\"'`](.*?)[\"'`]"],
+
+  // Propositions rapides dans les chaînes de caractères
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  // Mode d’insertion des suggestions (remplacement)
+  "editor.suggest.insertMode": "replace",
+  // Empêche l’acceptation par caractère de commit
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  // Gérer les références multiples par go-to direct
+  "editor.gotoLocation.multipleReferences": "goto",
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.gotoLocation.multipleDeclarations": "goto",
+  "editor.gotoLocation.multipleImplementations": "goto",
+  "editor.gotoLocation.multipleTypeDefinitions": "goto",
+
+  // Ne pas copier dans le presse-papiers quand rien n’est sélectionné
+  "editor.emptySelectionClipboard": false,
+  // Copier sans coloration syntaxique
+  "editor.copyWithSyntaxHighlighting": false,
+  // Désactive le support pour les lecteurs d’écran
+  "editor.accessibilitySupport": "off",
+  // Padding haut dans l’éditeur (en px)
+  "editor.padding.top": 16,
+
+  // Diff Editor : conserver les espaces en début/fin de ligne
+  "diffEditor.ignoreTrimWhitespace": false,
+  // Afficher le diff en un seul panneau
+  "diffEditor.renderSideBySide": false,
+  "diffEditor.wordWrap": "off",
+
+  // Sensibilité du défilement avec la molette
+  "editor.mouseWheelScrollSensitivity": 1.5,
+
+  // Terminal intégré : taille de la police
+  "terminal.integrated.fontSize": 17,
+  // Terminal intégré : hauteur de ligne
+  "terminal.integrated.lineHeight": 1.9,
+
+  // Suppression des sauts de ligne finaux en trop
+  "files.trimFinalNewlines": true,
+  // Suppression des espaces en fin de ligne
+  "files.trimTrailingWhitespace": true,
+  // Sauvegarde automatique au changement de focus
+  "files.autoSave": "onFocusChange",
+  // Langage par défaut pour nouveaux fichiers
+  "files.defaultLanguage": "markdown",
+  // Exclusion de fichiers/dossiers dans l’explorateur
+  "files.exclude": {
+    "**/.idea": true,
+    ".cache-loader/": true,
+    ".gitattributes": true,
+    ".gitkeep": true,
+    ".travis.yml": true,
+    ".vercel": true,
+    ".vscode/": true,
+    "coverage": true,
+    "acf-json": true,
+    "backend/vendor": true,
+    "CODE_OF_CONDUCT.md": true,
+    "config": false,
+    "LICENSE.md": true,
+    "package-lock.json": true,
+    "phpcs.xml": true,
+    ".editorconfig": true,
+    "**/README.md": true,
+    "prettier.config.js": true,
+    "yarn.lock": true,
+    "node_modules/": true,
+    ".gitignore": true,
+    ".output/node_modules/": false,
+    ".nuxt": true,
+    ".output": true,
+    "package.json": false,
+    "tsconfig.json": true
+  },
+
+  // SCM : ne pas surveiller certains dossiers pour optimiser les performances
+  "files.watcherExclude": {
+    "**/.output/**": true,
+    "**/.yarn/**": true,
+    "**/node_modules/**": true,
+    "backend/vendor/**": true
+  },
+
+  // Activer le semantic highlighting (couleurs selon le type)
+  "editor.semanticHighlighting.enabled": true,
+  // Colorisation des paires de crochets
+  "editor.bracketPairColorization.enabled": true,
+
+  // Suggestions inline activées
+  "editor.inlineSuggest.enabled": true,
+  // Entrée Enter pour valider intelligemment
+  "editor.acceptSuggestionOnEnter": "smart",
+  // Sélection des suggestions par défaut
+  "editor.suggestSelection": "first",
+  // N’affiche pas les mots dans la liste de suggestions
+  "editor.suggest.showWords": false,
+  // Désactive les suggestions Abbrev Emmet
+  "emmet.showAbbreviationSuggestions": false,
+
+  // Import non relatif pour JS/TS
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  // Compléter automatiquement les appels de fonctions
+  "typescript.suggest.completeFunctionCalls": true,
+
+  // Désactive la mise en évidence des caractères Unicode ambiguës
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.unicodeHighlight.invisibleCharacters": false,
+
+  // Recherche : ignorer les fichiers GitIgnore
+  "search.useIgnoreFiles": false,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/vendor/{[^l],?[^a]}*": true,
+    "**/public/{[^i],?[^n]}*": true,
+    "**/dist": true,
+    "**/_ide_helper.php": true,
+    "**/composer.lock": true,
+    "**/package-lock.json": true,
+    "storage": true,
+    ".phpunit.result.cache": true,
+    "_ide_helper.php": true,
+    "_ide_helper_models.php": true,
+    ".php_cs.cache": true,
+    ".phpstorm.meta.php": true
+  },
+
+  // Explorateur : confirmations et comportements automatiques
+  "explorer.confirmDelete": false,       // pas d’alerte à la suppression
+  "explorer.compactFolders": false,      // ne pas compresser les dossiers vides
+  "explorer.confirmDragAndDrop": false,  // pas de confirmation pour glisser-déposer
+  "explorer.autoReveal": false,          // ne pas centrer automatiquement
+  "explorer.decorations.badges": false,  // pas de badges décoratifs
+  "explorer.confirmPasteNative": false,  // pas de confirmation au collage
+
+  // Paramètres par langage
+  "[php]": {
+    "editor.formatOnSave": false
+  },
+  "[blade]": {
+    "editor.defaultFormatter": "shufo.vscode-blade-formatter"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+
+  // Miscellané : zoom et titre de fenêtre
+  "window.zoomLevel": 1.5,
+  "window.title": "${activeEditorShort}",
+  "scm.diffDecorations": "none",        // style minimal pour les diffs
+  "chat.editor.wordWrap": "on",
+  "notebook.output.wordWrap": true,
+  "git.decorations.enabled": false,
+  "problems.decorations.enabled": false,
+  "extensions.ignoreRecommendations": true,
+  "files.saveConflictResolution": "overwriteFileOnDisk",
+  "temphpest.useStrictTypesInNewFileStubs": true,
+
+  // Associations de fichiers à des langages
+  "files.associations": {
+    "*.page-template": "vue",
+    "*.layout-template": "vue",
+    "*.vue": "vue",
+    "*.css": "scss",
+    ".php_cs.dist": "php",
+    ".php_cs": "php",
+    ".pre": "php",
+    "artisan": "php",
+    "*.postcss": "scss"
+  },
+
+  // Regroupement de fichiers dans l’explorateur
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+    "composer.json": "composer.lock",
+    "psalm.xml": "psalm-baseline.xml",
+    ".php-cs-fixer.php": ".php-cs-fixer.cache",
+    "phpunit.xml": ".phpunit.result.cache",
+    "*.php": "${basename}Test.php"
+  },
+
+  // Emmet : expansion sur Tab
+  "emmet.triggerExpansionOnTab": true,
+  // Emmet : inclure ces langages pour HTML
+  "emmet.includeLanguages": {
+    "blade": "html",
+    "vue-html": "html",
+    "vue": "html",
+    "javascript": "html",
+    "blade.php": "html",
+    "twig": "html",
+    "postcss": "scss",
+    "vue-postcss": "scss"
+  },
+
+  // Icônes de produit
+  "workbench.productIconTheme": "icons-carbon",
+  // Barre de statut masquée
+  "workbench.statusBar.visible": false,
+  // Centre de commande masqué
+  "window.commandCenter": false,
+  // Mise à jour des imports TS/JS lors du déplacement : jamais
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  // Désactive la fermeture automatique des balises
+  "auto-close-tag.enableAutoCloseTag": false,
+  // Paramètres GitHub Copilot
+  "github.copilot.chat.localeOverride": "en",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+
+  // Formatter JSON
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  // Formatter Vue
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
+
+  // Fil d’Ariane désactivé
+  "breadcrumbs.enabled": false
+}
