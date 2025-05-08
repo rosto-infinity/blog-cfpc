@@ -118,7 +118,7 @@ $allArticles = $resultats->fetchAll();
 
 $pageTitle = 'Page Admin';
 
-// Début du tampon de la page de sortie
+// -Début du tampon de la page de sortie
 ob_start();
 
 // Inclure le layout de la page d'accueil
