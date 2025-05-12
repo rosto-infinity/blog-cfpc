@@ -5,6 +5,7 @@
   </header>
 
   <div class="articles-container2">
+    <?php  ?>
     <?php foreach ($articles as $article): ?>
       <article class="card2">
         <h2 class="card-title2"><?= htmlspecialchars($article['title']) ?></h2>
