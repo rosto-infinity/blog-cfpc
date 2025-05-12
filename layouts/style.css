@@ -138,6 +138,24 @@ nav ul li a:active {
   text-decoration: none;
 }
 
+.pagination-wrapper {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.pagination-wrapper a, 
+.pagination-wrapper span {
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+}
+.pagination-wrapper .active {
+  background-color: #060249 !important;
+  color: white;
+  border-color: #5eff00;
+  z-index: 10;
+}
 /*───────────────────────────────────────────
   Formulaire
 ───────────────────────────────────────────*/
@@ -328,3 +346,5 @@ a.passforget {
       font-size: 2em;
   }
 }
+
+
