@@ -121,7 +121,7 @@ $pageTitle = 'Page Admin';
 // -Début du tampon de la page de sortie
 ob_start();
 
-// Inclure le layout de la page d'accueil
+// -Inclure le layout de la page d'accueil
 require_once 'layouts/adminfghghhjfhf/admin_dashboardgfdgdqsfqqssqs_html.php';
 
 // -Récupération du contenu du tampon de la page d'accueil
