@@ -92,7 +92,7 @@ if (isset($_POST['add-article'])) {
   $introduction = clean_input($_POST['introduction']);
   $content = clean_input($_POST['content']);
 
-  // Validation des données
+  // -Validation des données
   if (empty($title) || empty($slug) || empty($introduction) || empty($content)) {
     $error = "Veuillez remplir tous les champs du formulaire !";
   } else {
