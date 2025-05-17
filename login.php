@@ -55,7 +55,6 @@ if (isset($_POST['login'])) {
 
 $pageTitle ="Se connecter dans le Blog"; 
 
-// 2-Debut du tampon de la page de sortie
- 
+//Rener
 render('articles/login');
 
