@@ -16,7 +16,7 @@ ob_start();
 // 3--inclure le layout de la page user
 require_once 'layouts/usersefffdtgggg/user_dashboardffffffffrr_html.php';
 
-//4-recuperation du contenu du tampon de la page user
+//4---recuperation du contenu du tampon de la page user
 $pageContent = ob_get_clean();
 
 //5-Inclure le layout de la page de sortie
