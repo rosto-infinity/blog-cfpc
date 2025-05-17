@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once 'libraries/database.php';
+require_once 'libraries/utils.php';
+
 $pdo = getPdo();
 
 /**

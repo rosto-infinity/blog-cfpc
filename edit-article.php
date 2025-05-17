@@ -1,10 +1,11 @@
 <?php
-
 // 1--Démarre une nouvelle session ou reprend une session existante
 session_start();
 
 // 2-Inclut le fichier de connexion à la base de données
 require_once 'libraries/database.php';
+require_once 'libraries/utils.php';
+
 $pdo = getPdo();
 $error = "";
 
@@ -64,9 +65,5 @@ if (isset($_POST['update'])) {
   }
 }
 $pageTitle = 'Éditer un article'; // Titre de la page pour le layout
-ob_start();
-// Mise en tampon du HTML de la vue
-require_once 'layouts/articles/edit-article_html.php';
-$pageContent = (string) ob_get_clean();
-// Inclusion du layout global
-require_once 'layouts/layout_html.php';
+render('articles/edit-article',compact('title', 'slug','pageTitle', 'articleId', 'introduction', 'content'));
+

@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once 'libraries/database.php';
+require_once 'libraries/utils.php';
+
 $pdo = getPdo();
 $error = [];
 
@@ -28,8 +30,5 @@ $commentaires  = $query->fetchAll();
 // / 1--On affiche le titre autre
 
 $pageTitle = 'Accueil des articles';
-ob_start();
+render('articles/show',compact('article','commentaires','article_id'));
 
-require_once 'layouts/articles/show_html.php';
-$pageContent = ob_get_clean();
-require_once 'layouts/layout_html.php';

@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once 'libraries/database.php';
+require_once 'libraries/utils.php';
+
 $pdo = getPdo();
 
 // Vérifiez les autorisations d'accès à la page
@@ -119,14 +121,4 @@ $allArticles = $resultats->fetchAll();
 
 $pageTitle = 'Page Admin';
 
-// ----Début du tampon de la page de sortie
-ob_start();
-
-// -Inclure le layout de la page d'accueil
-require_once 'layouts/adminfghghhjfhf/admin_dashboardgfdgdqsfqqssqs_html.php';
-
-// -Récupération du contenu du tampon de la page d'accueil
-$pageContent = ob_get_clean();
-
-// Inclure le layout de la page de sortie
-require_once 'layouts/layout_html.php';
+render('adminfghghhjfhf/admin_dashboardgfdgdqsfqqssqs',compact('allArticles','pageTitle'));
