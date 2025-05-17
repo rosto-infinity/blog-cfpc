@@ -2,7 +2,7 @@
 session_start();
 require_once 'libraries/database.php';
 
-// Initialiser la connexion PDO
+// -Initialiser la connexion PDO
 $pdo = getPdo();
 session_unset(); // Détruire toutes les variables de session
 session_destroy(); // Détruire la session
