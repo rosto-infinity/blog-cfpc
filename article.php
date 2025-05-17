@@ -1,7 +1,9 @@
 <?php
 session_start();
-require_once 'database/database.php';
+require_once 'libraries/database.php';
 
+// Initialiser la connexion PDO
+$pdo = getPdo();
 $error = [];
 
 $article_id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);

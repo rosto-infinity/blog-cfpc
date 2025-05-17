@@ -1,7 +1,9 @@
 <?php
 session_start();
-require_once 'database/database.php';
+require_once 'libraries/database.php';
 
+// Initialiser la connexion PDO
+$pdo = getPdo();
 
 /**
  * Vérifie si l'ID de l'article est passé en GET, valide et existe dans la base de données.

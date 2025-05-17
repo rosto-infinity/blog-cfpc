@@ -1,5 +1,8 @@
 <?php
-require_once 'database/database.php';
+require_once 'libraries/database.php';
+
+// Initialiser la connexion PDO
+$pdo = getPdo();
 
 // Initialisation du Paginator
 require_once 'vendor/autoload.php';

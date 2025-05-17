@@ -4,7 +4,10 @@
 session_start();
 
 // 2-Inclut le fichier de connexion à la base de données
-require_once 'database/database.php';
+require_once 'libraries/database.php';
+
+// Initialiser la connexion PDO
+$pdo = getPdo();
 $error = "";
 
 echo $error;

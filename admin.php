@@ -1,7 +1,9 @@
 <?php
 session_start();
-require_once "database/database.php";
+require_once 'libraries/database.php';
 
+// Initialiser la connexion PDO
+$pdo = getPdo();
 // Vérifiez les autorisations d'accès à la page
 if ($_SESSION['role'] !== 'admin') {
   header('Location: index.php');

@@ -1,7 +1,9 @@
 <?php
 session_start();
+require_once 'libraries/database.php';
 
-require_once "database/database.php";
+// Initialiser la connexion PDO
+$pdo = getPdo();
 /**
  * CE FICHIER DOIT ENREGISTRER UN NOUVEAU COMMENTAIRE EST REDIRIGER SUR L'ARTICLE !
  * 
