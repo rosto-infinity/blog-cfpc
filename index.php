@@ -1,6 +1,8 @@
 <?php
-require_once 'database/database.php';
+require_once 'libraries/database.php';
+require_once 'libraries/utils.php';
 
+$pdo = getPdo();
 // Initialisation du Paginator
 require_once 'vendor/autoload.php';
 
@@ -38,7 +40,12 @@ $paginator = new Paginator(
 
 // Suite de votre script existant...
 $pageTitle = 'Accueil du Blog';
-ob_start();
-require_once 'layouts/articles/index_html.php';
-$pageContent = ob_get_clean();
-require_once 'layouts/layout_html.php';
+
+render('articles/index', compact('pageTitle', 'articles','paginator'));
+
+// render('articles/index',[
+//     'pageTitle' => $pageTitle,
+//     'articles' => $articles,
+//     'paginator' => $paginator,
+
+// ]);

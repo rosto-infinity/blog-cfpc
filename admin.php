@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once "database/database.php";
+require_once 'libraries/database.php';
+$pdo = getPdo();
 
 // Vérifiez les autorisations d'accès à la page
 if ($_SESSION['role'] !== 'admin') {

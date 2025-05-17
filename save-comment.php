@@ -1,7 +1,7 @@
 <?php
 session_start();
-
-require_once "database/database.php";
+require_once 'libraries/database.php';
+$pdo = getPdo();
 /**
  * CE FICHIER DOIT ENREGISTRER UN NOUVEAU COMMENTAIRE EST REDIRIGER SUR L'ARTICLE !
  * 

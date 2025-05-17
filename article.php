@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once 'database/database.php';
-
+require_once 'libraries/database.php';
+$pdo = getPdo();
 $error = [];
 
 $article_id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
@@ -28,16 +28,8 @@ $commentaires  = $query->fetchAll();
 // / 1--On affiche le titre autre
 
 $pageTitle = 'Accueil des articles';
-
-// 2-Debut du tampon de la page de sortie
-
 ob_start();
 
-// 3-inclure le layout de la page show
 require_once 'layouts/articles/show_html.php';
-
-//4-recuperation du contenu du tampon de la page show
 $pageContent = ob_get_clean();
-
-//5-Inclure le layout de la page de sortie
 require_once 'layouts/layout_html.php';
