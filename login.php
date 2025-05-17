@@ -31,7 +31,7 @@ if (isset($_POST['login'])) {
           $_SESSION['auth'] = $user;
          
 
-          // -Redirection en fonction du rôle
+          // -_Redirection en fonction du rôle
           switch ($user['role']) {
               case 'admin':
                   header("Location: admin.php");
