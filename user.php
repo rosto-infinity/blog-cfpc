@@ -9,7 +9,7 @@ $pdo = getPdo();
 
 $pageTitle ='Page User'; 
 
-// 2-Debut du tampon de la page de sortie
+// 2---Debut du tampon de la page de sortie
  
 ob_start();
 
