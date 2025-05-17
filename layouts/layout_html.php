@@ -12,6 +12,7 @@ if (session_status() == PHP_SESSION_NONE) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./layouts/style.css">
   <link rel="stylesheet" href="./layouts/paginate.css">
+  <link href="../src/output.css" rel="stylesheet">
   <title>Cours blog PHP 2024 - <?= $pageTitle ?> </title>
 </head>
 
