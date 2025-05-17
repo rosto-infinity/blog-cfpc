@@ -13,7 +13,7 @@ $pageTitle ='Page User';
  
 ob_start();
 
-// 3-inclure le layout de la page user
+// 3--inclure le layout de la page user
 require_once 'layouts/usersefffdtgggg/user_dashboardffffffffrr_html.php';
 
 //4-recuperation du contenu du tampon de la page user
