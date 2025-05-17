@@ -54,7 +54,7 @@ if (isset($_POST['update'])) {
   } else {
 
 
-    // -Mise à jour de l'article dans la base de données
+    // ----Mise à jour de l'article dans la base de données
     $data = compact('title', 'slug', 'introduction', 'content', 'articleId');
     $query = $pdo->prepare('UPDATE articles SET title = :title, slug = :slug, introduction = :introduction, content = :content WHERE id = :articleId');
     $query->execute($data);
