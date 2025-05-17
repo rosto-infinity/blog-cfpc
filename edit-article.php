@@ -33,7 +33,7 @@ if (isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT)) {
   $content = $article['content'] ?? "";
 }
 
-// --Vérification et nettoyage des entrées
+// --tVérification et nettoyage des entrées
 function clean_input($data)
 {
   return htmlspecialchars(stripslashes(trim($data)));
