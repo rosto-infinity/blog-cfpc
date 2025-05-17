@@ -19,7 +19,7 @@ $error = '';
 // -Récupération des informations d'un article à modifier
 if (isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT)) {
 
-  // -Récupération des informations de l'article à éditer
+  // --Récupération des informations de l'article à éditer
   $sql = "SELECT * FROM articles WHERE id = ?";
   $query = $pdo->prepare($sql);
   $articleId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
