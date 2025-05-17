@@ -1,6 +1,6 @@
 <?php
  /**
-  *Retourne la connxion de la DBase
+  *Retourne la connxion de la Data Base
     *
     *@return PDO
   */
