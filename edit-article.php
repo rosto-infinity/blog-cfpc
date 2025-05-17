@@ -48,7 +48,7 @@ if (isset($_POST['update'])) {
   $content = clean_input(filter_input(INPUT_POST, 'content', FILTER_DEFAULT));
   $articleId = clean_input(filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT));
 
-  // -Validation des données
+  // ---Validation des données
   if (empty($title) || empty($slug) || empty($introduction) || empty($content)) {
     $error = "Veuillez remplir tous les champs du formulaire !";
   } else {
