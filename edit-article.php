@@ -59,7 +59,7 @@ if (isset($_POST['update'])) {
     $query = $pdo->prepare('UPDATE articles SET title = :title, slug = :slug, introduction = :introduction, content = :content WHERE id = :articleId');
     $query->execute($data);
 
-    // -Redirection vers la page d'adim
+    // --Redirection vers la page d'adim
     header("Location: admin.php");
     exit();
   }
