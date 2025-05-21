@@ -30,7 +30,6 @@ $sql = '
     ORDER BY articles.created_at DESC
     LIMIT :limit OFFSET :offset
 ';
-
 $stmt = $pdo->prepare($sql);
 $stmt->bindParam(':limit', $itemsPerPage, PDO::PARAM_INT);
 $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
