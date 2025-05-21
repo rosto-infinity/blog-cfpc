@@ -12,13 +12,14 @@
   </h2>
 
   <?php foreach ($commentaires as $commentaire) : ?>
-    <h3 class="comment-author">Commentaire de :
-      <?= $commentaire['username'] ?>
-    </h3>
+    <h3 class="comment-author">Commentaire de : <?= $commentaire['username'] ?></h3>
     <small class="comment-date"><?= $commentaire['created_at'] ?></small>
     <blockquote class="comment-content">
       <em><?= $commentaire['content'] ?></em>
     </blockquote>
+    <?php if (isset($_SESSION['auth']) && $_SESSION['auth']['id'] === $commentaire['user_id']) : ?>
+      <a href="delete-comment.php?id=<?= $commentaire['id'] ?>&article_id=<?= $article_id ?>" class="delete-comment-link">Supprimer</a>
+    <?php endif; ?>
   <?php endforeach; ?>
 <?php endif; ?>
 
