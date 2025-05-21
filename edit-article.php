@@ -109,7 +109,7 @@ if (isset($_POST['update'])) {
             $error = $error ?: "Aucune modification détectée ou erreur lors de la mise à jour";
         }
     }
-     // --Redirection vers la page d'adim
+     // --Redirection vers la page d'admin
      header("Location: admin.php");
      exit();
 }
