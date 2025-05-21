@@ -1,3 +1,5 @@
 node_modules
 layouts/style.css
 vendor
+layouts/paginate.css
+
