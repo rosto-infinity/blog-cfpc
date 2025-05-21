@@ -87,7 +87,9 @@ function removeAccents($string)
   ];
   return strtr($string, $accents);
 }
-
+/**
+ * 
+ */
 // Récupération des données des entrées de l'utilisateur
 if (isset($_POST['add-article'])) {
   $title = clean_input($_POST['title']);

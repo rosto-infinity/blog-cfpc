@@ -302,28 +302,7 @@ a.passforget {
 /*───────────────────────────────────────────
   Carte d'article
 ───────────────────────────────────────────*/
-.card2 {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  background: var(--color-white);
-  border: 1px solid var(--color-second);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
 
-.card2:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.card-header2 {
-  color: var(--color-first);
-  font-size: 1.5rem;
-  padding: var(--sp-md);
-}
 .card-image-container2 {
   height: 200px;
   overflow: hidden;
@@ -342,33 +321,6 @@ a.passforget {
   transform: scale(1.05);
 }
 
-
-
-.card-body2 {
-  padding: var(--sp-md);
-  flex-grow: 1;
-}
-
-.card-intro2 {
-  font-size: var(--fs-7);
-  color: var(--color-text);
-  line-height: 1.6;
-  margin: 0;
-}
-
-/*───────────────────────────────────────────
-  Pied de carte
-───────────────────────────────────────────*/
-.card-footer2 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--sp-sm);
-  padding: var(--sp-md);
-  background: var(--color-second);
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-}
 
 .card-meta2,
 .card-comments2 {
