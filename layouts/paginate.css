@@ -73,6 +73,24 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.article-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.article {
+  position: relative;
+}
+
+/* Style pour le formulaire d'upload */
+.form-control input[type="file"] {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+}
 
 .comment-section {
   margin-top: 40px;

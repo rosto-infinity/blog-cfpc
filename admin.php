@@ -94,31 +94,74 @@ if (isset($_POST['add-article'])) {
   $slug = createSlug($title);
   $introduction = clean_input($_POST['introduction']);
   $content = clean_input($_POST['content']);
+  $imagePath = null;
 
-  // -Validation des données
+  // Traitement de l'image
+  if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+      $uploadDir = 'uploads/articles/';
+      if (!is_dir($uploadDir)) {
+          mkdir($uploadDir, 0755, true);
+      }
+      
+      $extension = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
+      $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+      
+      if (in_array($extension, $allowedExtensions)) {
+          $filename = uniqid('article_') . '.' . $extension;
+          $destination = $uploadDir . $filename;
+          
+          if (move_uploaded_file($_FILES['image']['tmp_name'], $destination)) {
+              $imagePath = $destination;
+          } else {
+              $error = "Erreur lors du téléchargement de l'image";
+          }
+      } else {
+          $error = "Format d'image non supporté. Utilisez JPG, PNG, GIF ou WEBP.";
+      }
+  }
+
+  // Validation des données
   if (empty($title) || empty($slug) || empty($introduction) || empty($content)) {
-    $error = "Veuillez remplir tous les champs du formulaire !";
+      $error = "Veuillez remplir tous les champs obligatoires du formulaire !";
   } else {
-    // Vérification de l'unicité du slug
-    $stmt = $pdo->prepare('SELECT COUNT(*) FROM articles WHERE slug = :slug');
-    $stmt->execute(['slug' => $slug]);
+      // Vérification de l'unicité du slug
+      $stmt = $pdo->prepare('SELECT COUNT(*) FROM articles WHERE slug = :slug');
+      $stmt->execute(['slug' => $slug]);
 
-    if ($stmt->fetchColumn() > 0) {
-      $error = "Le slug '$slug' existe déjà. Veuillez en choisir un autre.";
-    } else {
-      // --Insertion du nouvel article dans la base de données
-      $query = $pdo->prepare('INSERT INTO articles (title, slug, introduction, content, created_at) VALUES (:title, :slug, :introduction, :content, NOW())');
-      $query->execute(compact('title', 'slug', 'introduction', 'content'));
-    }
+      if ($stmt->fetchColumn() > 0) {
+          $error = "Le slug '$slug' existe déjà. Veuillez en choisir un autre.";
+      } else {
+          // Insertion du nouvel article dans la base de données
+          $query = $pdo->prepare('INSERT INTO articles 
+              (title, slug, introduction, content, image, created_at) 
+              VALUES (:title, :slug, :introduction, :content, :image, NOW())');
+              
+          $query->execute([
+              'title' => $title,
+              'slug' => $slug,
+              'introduction' => $introduction,
+              'content' => $content,
+              'image' => $imagePath
+          ]);
+          
+          if ($query->rowCount() > 0) {
+              $success = "Article créé avec succès!";
+          } else {
+              $error = "Erreur lors de la création de l'article";
+          }
+      }
   }
 }
 
-// Récupération de tous les articles
-$query = "SELECT * FROM articles ORDER BY created_at DESC";
+// Récupération de tous les articles avec gestion des images
+$query = "SELECT *
+        FROM articles ORDER BY created_at DESC";
+        
 $resultats = $pdo->prepare($query);
 $resultats->execute();
-$allArticles = $resultats->fetchAll();
+$allArticles = $resultats->fetchAll(PDO::FETCH_ASSOC);
 
-$pageTitle = 'Page Admin';
+$pageTitle = 'Tableau de bord Admin';
+
 
 render('adminfghghhjfhf/admin_dashboardgfdgdqsfqqssqs',compact('allArticles','pageTitle'));
