@@ -94,7 +94,7 @@ if (isset($_POST['update'])) {
             'slug' => $slug,
             'introduction' => $introduction,
             'content' => $content,
-            'image' => $currentImage, // Assurez-vous que le nom de colonne correspond à votre BDD
+            'image' => $currentImage, //-- Assurez-vous que le nom de colonne correspond à votre BDD
             'articleId' => $articleId
         ]);
         
