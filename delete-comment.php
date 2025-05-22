@@ -25,7 +25,7 @@ if (!$comment || $comment['user_id'] !== $user_id) {
     die('Vous ne pouvez pas supprimer ce commentaire.');
 }
 
-// Supprimer le commentaire
+// -Supprimer le commentaire
 $query = $pdo->prepare('DELETE FROM comments WHERE id = :comment_id');
 $query->execute(['comment_id' => $comment_id]);
 
