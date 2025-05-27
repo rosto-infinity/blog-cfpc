@@ -16,3 +16,7 @@ require_once "layouts/" .$path."_html.php";
 $pageContent = ob_get_clean();
 require_once 'layouts/layout_html.php';
 }
+function redirect(string $path){
+  header("Location: $path"); // Rediriger vers la page de connexion
+  exit(); // Terminer le script
+}

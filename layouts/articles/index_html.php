@@ -5,7 +5,7 @@
   </header>
 
   <div class="articles-container2">
-    <?php foreach ($articles as $article): ?>
+    <?php foreach ($articlesByPaginator as $article): ?>
       <article class="card2">
         <?php if (!empty($article['image'])): ?>
           <div class="card-image-container2">

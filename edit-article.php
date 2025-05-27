@@ -110,8 +110,7 @@ if (isset($_POST['update'])) {
         }
     }
      // --Redirection vers la page d'admin
-     header("Location: admin.php");
-     exit();
+     redirect("admin.php");
 }
 
 $pageTitle = 'Éditer un article';

@@ -57,8 +57,8 @@ if (isset($_POST['register'])) {
 
     // On redirige vers la page de login
 
-    header("Location: login");
-    exit();
+   
+    redirect("login.php");
   }
 }
 

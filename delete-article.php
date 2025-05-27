@@ -14,8 +14,9 @@ $pdo = getPdo();
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 if ($id === false) {
   //- Utilisation de la fonction header pour rediriger avec un message d'erreur
-  header("Location: error.php?message=Id de l'article non valide.");
-  exit();
+  // header("Location: error.php?message=Id de l'article non valide.");
+  // exit();
+  redirect("error.php?message=Id de l'article non valide.");
 }
 
 // 2. -Vérification que l'article existe
@@ -32,5 +33,4 @@ $query = $pdo->prepare('DELETE FROM articles WHERE id = :id');
 $query->execute(['id' => $id]);
 
 // 4.- Redirection vers la page d'accueil
-header("Location: admin.php");
-exit();
+redirect("admin.php");

@@ -7,8 +7,8 @@
   <h2 class="comment-heading">Il n'y a pas encore de commentaires pour cet article... SOYEZ LE PREMIER ! :D</h2>
 <?php else : ?>
 
-  <h2 class="comment-heading">
-    Il y a déjà <?= count($commentaires) ?> Réactions
+  <h2 class="comment-heading"> <b>
+    Il y a déjà <?= count($commentaires) ?> Réactions</b>
   </h2>
 
   <?php foreach ($commentaires as $commentaire) : ?>
@@ -18,11 +18,17 @@
       <em><?= $commentaire['content'] ?></em>
     </blockquote>
     <?php if (isset($_SESSION['auth']) && $_SESSION['auth']['id'] === $commentaire['user_id']) : ?>
-      <a href="delete-comment.php?id=<?= $commentaire['id'] ?>&article_id=<?= $article_id ?>" class="delete-comment-link">Supprimer</a>
-    <?php endif; ?>
+      <a 
+          href="delete-comment.php?id=<?= $commentaire['id'] ?>&article_id=<?= $article_id ?>" 
+          class="delete-comment-link"
+          onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce commentaire ?')"
+        >
+          Supprimer
+      </a>
+      <?php endif; ?>
+    </div>
   <?php endforeach; ?>
 <?php endif; ?>
-
 
 <?php if (isset($_SESSION['auth'])) : ?>
 

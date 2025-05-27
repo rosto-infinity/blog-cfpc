@@ -55,6 +55,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   //Rediriger vers la pages des articles apre l'ajout du commentaire
 
-  header("Location: article.php?id=" . $article_id);
-  exit;
+ redirect("article.php?id=" . $article_id);
 }
