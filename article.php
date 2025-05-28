@@ -2,7 +2,9 @@
 session_start();
 require_once 'libraries/database.php';
 require_once 'libraries/utils.php';
+require_once 'libraries/Models/Article.php';
 
+$modelArticle = new Article();
 
 $error = [];
 
@@ -11,7 +13,7 @@ if ($article_id === NULL || $article_id === false) {
     $error['article_id'] = "Le parametre id  est invalide.";
 }
 
-$article = findArticle($article_id);
+$article = $modelArticle ->findArticle($article_id);
 
 // echo "<pre>";
 // print_r($article);

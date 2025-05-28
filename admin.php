@@ -2,7 +2,9 @@
 session_start();
 require_once 'libraries/database.php';
 require_once 'libraries/utils.php';
+require_once 'libraries/Models/Article.php';
 
+$modelArticle = new Article();
 $pdo = getPdo();
 
 // Vérifiez les autorisations d'accès à la page
@@ -157,7 +159,7 @@ if (isset($_POST['add-article'])) {
 }
 
 // Récupération de tous les articles avec gestion des images
-$allArticles = findAllArticles();
+$allArticles =$modelArticle -> findAllArticles();
 
 $pageTitle = 'Tableau de bord Admin';
 

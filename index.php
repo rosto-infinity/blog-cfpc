@@ -1,19 +1,20 @@
 <?php 
+use JasonGrimes\Paginator;
 require_once 'libraries/database.php';
 require_once 'libraries/utils.php';
 require_once 'vendor/autoload.php';
+require_once 'libraries/Models/Article.php';
 
-use JasonGrimes\Paginator;
-
+$modelArticle = new Article();
 // Récupération des paramètres de pagination depuis l'URL
 $currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $itemsPerPage = 6;
 
 // Récupération des articles pour la page actuelle
-$articlesByPaginator = findAllArticlesByPaginator($currentPage, $itemsPerPage);
+$articlesByPaginator = $modelArticle ->findAllArticlesByPaginator($currentPage, $itemsPerPage);
 
 // Calcul du nombre total d'articles
-$totalItems = countArticles();
+$totalItems = $modelArticle->countArticles();
 
 // Initialisation du paginator
 $paginator = new Paginator(  $totalItems, $itemsPerPage,  $currentPage, '?page=(:num)'
