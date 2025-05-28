@@ -17,10 +17,21 @@ if (session_status() == PHP_SESSION_NONE) {
 </head>
 
 <body>
+  <style>
+    .delete-comment-link {
+  color: red;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.delete-comment-link:hover {
+  text-decoration: underline;
+}
+  </style>
   <header>
     <div class="logo">
       <h2>
-        <a href="http://blog-cfpc.test">Blog-2025
+        <a href="/">Blog-2025
         </a>
       </h2>
     </div>

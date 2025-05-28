@@ -1,22 +1,17 @@
 <?php
 session_start();
-require_once 'database/database.php';
- 
+require_once 'libraries/database.php';
+require_once 'libraries/utils.php';
+
+$pdo = getPdo();
 
 
 if (isset($_POST['login'])) {
   $errors =[]; 
   if (!empty($_POST['email']) && !empty($_POST['password'])) {
 
-      // -Vérification des informations de connexion
-      $query = "SELECT * FROM users
-      WHERE (email = :email OR username =:email)";
-      $query = $pdo->prepare($query);
-      $query->execute([
-          'email' => $_POST['email'], 
-          'password' => $_POST['password']
-      ]);
-      $user = $query->fetch();
+      // -ffVérification des informations de connexion
+      $user = getUserByEmailOrUsername( $_POST['email']);
       // echo"<pre>";
       // print_r($user);
       // echo"<pre>";
@@ -29,7 +24,7 @@ if (isset($_POST['login'])) {
           $_SESSION['auth'] = $user;
          
 
-          // -Redirection en fonction du rôle
+          // -_Redirection en fonction du rôle
           switch ($user['role']) {
               case 'admin':
                   header("Location: admin.php");
@@ -53,16 +48,6 @@ if (isset($_POST['login'])) {
 
 $pageTitle ="Se connecter dans le Blog"; 
 
-// 2-Debut du tampon de la page de sortie
- 
-ob_start();
-
-// 3-inclure le layout de la page login
-require_once 'layouts/articles/login_html.php';
-
-//4-recuperation du contenu du tampon de la page de login
-$pageContent = ob_get_clean();
-
-//5-Inclure le layout de la page de sortie
-require_once 'layouts/layout_html.php';
+//Rener
+render('articles/login');
 

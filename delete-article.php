@@ -1,6 +1,8 @@
 <?php
 session_start();
-require_once 'database/database.php';
+require_once 'libraries/database.php';
+require_once 'libraries/utils.php';
+
 
 
 /**
@@ -12,22 +14,23 @@ require_once 'database/database.php';
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 if ($id === false) {
   //- Utilisation de la fonction header pour rediriger avec un message d'erreur
-  header("Location: error.php?message=Id de l'article non valide.");
-  exit();
+  // header("Location: error.php?message=Id de l'article non valide.");
+  // exit();
+  redirect("Location: error.php?message=Id de l'article non valide.");
 }
 
 // 2. -Vérification que l'article existe
-$query = $pdo->prepare('SELECT COUNT(*) FROM articles WHERE id = :id');
-$query->execute(['id' => $id]);
+// $query = $pdo->prepare('SELECT COUNT(*) FROM articles WHERE id = :id');
+// $query->execute(['id' => $id]);
 
-if ($query->fetchColumn() == 0) {
-  header("Location: error.php?message=L'article $id n'existe pas, vous ne pouvez donc pas le supprimer !");
-  exit();
+$article = findArticle( $id);
+
+if (!$article ) {
+  redirect(" error.php?message=L'article $id n'existe pas, vous ne pouvez donc pas le supprimer !");
 }
 
 // 3.- Suppression de l'article
-$query = $pdo->prepare('DELETE FROM articles WHERE id = :id');
-$query->execute(['id' => $id]);
+deleteArticles($id);
 
 // 4.- Redirection vers la page d'accueil
 header("Location: admin.php");

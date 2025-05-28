@@ -1,1 +1,5 @@
+layouts
+vendor
+layouts/paginate.css
+~/sites/bog-cfpc/layouts/style.css
 node_modules

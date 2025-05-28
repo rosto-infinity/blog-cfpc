@@ -2,17 +2,6 @@
 <!-- Contenu spécifique à l'admin -->
 <h3>Hello <?= isset($_SESSION["auth"]['username']) ? $_SESSION["auth"]['username'] : "" ?></h3>
 
-
-<!-- <h3>
-    <?php
-    // if (isset($_SESSION["auth"]['username'])) {
-    //     echo $_SESSION["auth"]['username'];
-    // } else {
-    //     echo "";
-    // }
-    ?>
-</h3> -->
-
 <div class="admin">
 
   <div class="article adm">
@@ -44,6 +33,11 @@
       <label for="content">Content:</label>
       <textarea name="content" id="content"></textarea>
     </div>
+
+    <div class="form-control">
+        <label for="image">Image de l'article:</label>
+        <input type="file" name="image" id="image" accept="image/*">
+    </div>
     <div class="form-control">
       <button type="submit" name="add-article" value="add-article">Ajouter</button>
     </div>
@@ -58,6 +52,9 @@
 <div class="article-grid">
   <?php foreach ($allArticles as $article) : ?>
     <div class="article">
+    <?php if (!empty($article['image'])) : ?>
+        <img src="<?= $article['image'] ?>" alt="<?= htmlspecialchars($article['title']) ?>" class="article-image">
+      <?php endif; ?>
       <h2><?= $article['title'] ?></h2>
       <p><?= $article['introduction'] ?></p>
       <small> Ecrit le<?= $article['created_at'] ?> </small> <br />

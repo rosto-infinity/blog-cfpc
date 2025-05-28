@@ -1,44 +1,26 @@
-<?php
-require_once 'database/database.php';
-
-// Initialisation du Paginator
+<?php 
+require_once 'libraries/database.php';
+require_once 'libraries/utils.php';
 require_once 'vendor/autoload.php';
 
 use JasonGrimes\Paginator;
-// Requête comptant le total d'articles
-$totalQuery = $pdo->query("SELECT COUNT(*) FROM articles");
-$totalItems = $totalQuery->fetchColumn();
 
-$itemsPerPage = 3; // Nombre d'articles par page
-$currentPage = $_GET['page'] ?? 1; // Page actuelle
+// Récupération des paramètres de pagination depuis l'URL
+$currentPage = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$itemsPerPage = 6;
 
+// Récupération des articles pour la page actuelle
+$articlesByPaginator = findAllArticlesByPaginator($currentPage, $itemsPerPage);
 
+// Calcul du nombre total d'articles
+$totalItems = countArticles();
 
-// // --Requête paginée (optimisée pour MySQL)
-$offset = ($currentPage - 1) * $itemsPerPage;
-
-$sql  = 'SELECT * FROM articles 
-ORDER BY created_at 
-DESC 
-LIMIT :limit OFFSET :offset';
-
-$stmt = $pdo->prepare($sql);
-$stmt->bindParam(':limit',  $itemsPerPage, PDO::PARAM_INT);
-$stmt->bindParam(':offset', $offset,       PDO::PARAM_INT);
-$stmt->execute();
-$articles = $stmt->fetchAll();
-
-
-$paginator = new Paginator(
-    $totalItems,
-    $itemsPerPage,
-    $currentPage,
-    '?page=(:num)' // Format de l'URL
+// Initialisation du paginator
+$paginator = new Paginator(  $totalItems, $itemsPerPage,  $currentPage, '?page=(:num)'
 );
 
-// Suite de votre script existant...
+// Titre de la page
 $pageTitle = 'Accueil du Blog';
-ob_start();
-require_once 'layouts/articles/index_html.php';
-$pageContent = ob_get_clean();
-require_once 'layouts/layout_html.php';
+
+// Rendu de la vue
+render('articles/index', compact('pageTitle', 'articlesByPaginator', 'paginator'));
