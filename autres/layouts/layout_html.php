@@ -31,7 +31,7 @@ if (session_status() == PHP_SESSION_NONE) {
   <header>
     <div class="logo">
       <h2>
-        <a href="/">Blog-2025
+        <a href="http://blog-cfpc.test">Blog-2025
         </a>
       </h2>
     </div>
