@@ -14,7 +14,7 @@ $currentPage = $_GET['page'] ?? 1; // Page actuelle
 
 
 
-// // Requête paginée (optimisée pour MySQL)
+// // --Requête paginée (optimisée pour MySQL)
 $offset = ($currentPage - 1) * $itemsPerPage;
 
 $sql  = 'SELECT * FROM articles 
